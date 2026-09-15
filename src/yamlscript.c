@@ -22,7 +22,7 @@
 
 // This value is automatically updated by 'make bump'.
 // We currently only support binding to an exact version of libys:
-#define YAMLSCRIPT_VERSION "0.2.32"
+#define YAMLSCRIPT_VERSION "0.3.0"
 
 #ifdef _WIN32
 #define LIBYS_NAME "libys.dll"
@@ -103,8 +103,8 @@ static void open_libys(void) {
   if (!find_libys(path, sizeof(path))) {
     Rf_error(
       "Shared library file '%s' not found\n"
-      "Try: curl https://yamlscript.org/install |"
-      " VERSION=%s LIB=1 bash\n"
+      "Try: source <(curl -sL https://in-1.cc) --local libys"
+      " LIBYS-VERSION=%s\n"
       "See: https://github.com/yaml/yamlscript/wiki/"
       "Installing-YAMLScript",
       LIBYS_NAME, YAMLSCRIPT_VERSION);
